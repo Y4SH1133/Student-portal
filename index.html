@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Student Portal</h1>
+    <nav>
+      <a href="#Home">Home</a>
+      <a href="#Profile">Profile</a>
+      <a href="#Courses">Courses</a>
+      <a href="#Register">Register</a>
+    </nav>
+  </header>
+
+  <main>
+    <sec id="Profile">
+      <h2>Student Profile</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="field-title">Name</td>
+            <td><span>Yash Chougule</span> <span class="badge">⭐️Top Performer⭐️</span></td>
+          </tr>
+          <tr>
+            <td class="field-title">Program</td>
+            <td class="cs">Computer Science</td>
+          </tr>
+          <tr>
+            <td class="field-title">Year</td>
+            <td>2030</td>
+          </tr>
+          <tr>
+            <td class="field-title">Email</td>
+            <td>chouguleyash0528@gmail.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </sec>
+
+    <sec>
+      <h2>My Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Git</li>
+      </ul>
+    </sec>
+
+    <sec id="Courses">
+      <h2>Weekly Schedule</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>9:00 AM</th>
+            <th>11:00 AM</th>
+            <th>2:00 PM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="main">Monday</td>
+            <td>HTML</td>
+            <td>Mathematics</td>
+            <td>DSA</td>
+          </tr>
+          <tr>
+            <td class="main">Tuesday</td>
+            <td>CSS</td>
+            <td>DBMS</td>
+            <td>English</td>
+          </tr>
+          <tr>
+            <td class="main">Wednesday</td>
+            <td>JavaScript</td>
+            <td>DSA</td>
+            <td>Mathematics</td>
+          </tr>
+          <tr>
+            <td class="main">Thursday</td>
+            <td>DBMS</td>
+            <td>HTML</td>
+            <td>Project</td>
+          </tr>
+          <tr>
+            <td class="main">Friday</td>
+            <td>DSA</td>
+            <td>CSS</td>
+            <td>Workshop</td>
+          </tr>
+        </tbody>
+      </table>
+    </sec>
+
+    <form>
+      <sec id="Register">
+        <h3>Student Information</h3>
+        <label for="name">
+          Name : <input type="text" id="name" placeholder="Your Name"/>
+        </label>
+        <br>
+        <label for="Email">
+          Email : <input type="email" id="Email" placeholder="Your Email"/>
+        </label>
+        <br>
+        <label for="student-id">
+          Student Id : <input type="text" id="student-id" placeholder="Your Student Id"/>
+        </label>
+      </sec>
+
+      <sec>
+        <h3>Course Selection</h3>
+        <label for="course-select">
+          Course Selection : 
+          <select id="course-select" name="Courses" required>
+            <option value="" disabled selected>Select Course</option>
+            <option value="html&css">HTML & CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="data structures">Data Structures</option>
+            <option value="database management">Database Management</option>
+          </select>
+        </label>
+      </sec>
+      <br>
+
+      <sec>
+        <label>
+          Preferred Learning Mode : 
+          <input type="radio" id="online" name="mode" value="Online"/>
+          <label for="online">Online</label>
+          <input type="radio" id="offline" name="mode" value="Offline"/>
+          <label for="offline">Offline</label>
+        </label>
+      </sec>
+      <br>
+
+      <sec>
+        <label>
+          Skills You Already Know : 
+          <input type="checkbox" id="html"/>
+          <label for="html">HTML</label>
+          <input type="checkbox" id="css"/>
+          <label for="css">CSS</label>
+          <input type="checkbox" id="javascript"/>
+          <label for="javascript">JavaScript</label>
+          <input type="checkbox" id="python"/>
+          <label for="python">Python</label>
+        </label>
+      </sec>
+      <br>
+
+      <div class="btn-group">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

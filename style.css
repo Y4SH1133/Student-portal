@@ -1,0 +1,395 @@
+/* =========================================================
+   STRICT 3-COLOR SYSTEM
+   White (Primary Background / Contrast Text): #ffffff
+   Midnight Navy (Text / Primary Accents):    #00171f
+   Prussian Blue (Header / Borders / Hovers): #003459
+   ========================================================= */
+
+:root {
+  --bg-white: #ffffff;
+  --navy-dark: #00171f;
+  --navy-blue: #003459;
+
+  --font-serif: "Georgia", "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-white);
+  color: var(--navy-dark);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   HEADER & NAVIGATION (Filled with #003459)
+   ========================================================= */
+header {
+  background-color: var(--navy-blue);
+  border-bottom: 2px solid var(--navy-dark);
+  padding: 1.6rem 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 23, 31, 0.2);
+}
+
+header h1 {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bg-white);
+  margin-bottom: 0.75rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-white);
+  position: relative;
+  padding-bottom: 4px;
+  transition: var(--transition);
+}
+
+/* Underline Animation on Hover */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--bg-white);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--bg-white);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   MAIN CONTAINERS & SECTIONS (<sec> and <section>)
+   ========================================================= */
+main {
+  width: 90%;
+  max-width: 920px;
+  margin: 2.5rem auto 4rem auto;
+}
+
+sec, section {
+  display: block;
+  background-color: var(--bg-white);
+  border: 1px solid var(--navy-blue);
+  padding: 2rem;
+  margin-bottom: 2.2rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 23, 31, 0.05);
+  transition: var(--transition);
+}
+
+sec:hover, section:hover {
+  border-color: var(--navy-dark);
+  box-shadow: 0 8px 24px rgba(0, 52, 89, 0.12);
+  transform: translateY(-2px);
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  letter-spacing: 0.08em;
+  color: var(--navy-dark);
+  border-left: 4px solid var(--navy-blue);
+  padding-left: 0.8rem;
+  margin-bottom: 1.4rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--navy-blue);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--navy-blue);
+}
+
+/* =========================================================
+   TABLES (Profile & Schedule)
+   ========================================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--navy-dark) !important;
+  background-color: var(--bg-white);
+  margin-top: 0.5rem;
+}
+
+th {
+  background-color: var(--navy-dark);
+  color: var(--bg-white);
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  border: 1px solid var(--navy-dark) !important;
+}
+
+td {
+  padding: 0.9rem 1.1rem;
+  font-size: 0.92rem;
+  color: var(--navy-dark);
+  border: 1px solid rgba(0, 52, 89, 0.25) !important;
+  transition: var(--transition);
+}
+
+.field-title, .main {
+  font-weight: 600;
+  background-color: rgba(0, 52, 89, 0.06);
+  color: var(--navy-dark);
+  width: 25%;
+}
+
+/* Row Hover Interaction */
+tbody tr:hover td {
+  background-color: var(--navy-blue);
+  color: var(--bg-white);
+}
+
+tbody tr:hover td.field-title,
+tbody tr:hover td.main {
+  background-color: var(--navy-dark);
+  color: var(--bg-white);
+}
+
+tbody tr:hover .badge {
+  background-color: var(--bg-white);
+  color: var(--navy-dark);
+  border-color: var(--bg-white);
+}
+
+/* Top Performer Badge */
+.badge {
+  display: inline-block;
+  background-color: var(--navy-blue);
+  color: var(--bg-white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+  border: 1px solid var(--navy-blue);
+  margin-left: 0.6rem;
+  transition: var(--transition);
+}
+
+/* =========================================================
+   SKILLS LIST
+   ========================================================= */
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding: 0;
+}
+
+ul li {
+  background-color: var(--bg-white);
+  color: var(--navy-dark);
+  border: 1px solid var(--navy-blue);
+  padding: 0.55rem 1.35rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Hover Lift */
+ul li:hover {
+  background-color: var(--navy-blue);
+  color: var(--bg-white);
+  border-color: var(--navy-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0, 52, 89, 0.25);
+}
+
+/* =========================================================
+   FORM CONTROLS
+   ========================================================= */
+form {
+  margin-top: 1rem;
+}
+
+form label {
+  color: var(--navy-dark);
+  font-size: 0.92rem;
+  font-weight: 500;
+  display: inline-block;
+  margin: 0.4rem 0;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  background-color: var(--bg-white);
+  border: 1px solid var(--navy-blue);
+  color: var(--navy-dark);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.92rem;
+  border-radius: 4px;
+  outline: none;
+  margin-left: 0.4rem;
+  transition: var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: var(--navy-dark);
+  box-shadow: 0 0 8px rgba(0, 52, 89, 0.25);
+}
+
+select option {
+  background-color: var(--bg-white);
+  color: var(--navy-dark);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--navy-blue);
+  cursor: pointer;
+  margin-left: 0.5rem;
+  margin-right: 0.2rem;
+  vertical-align: middle;
+}
+
+/* Action Buttons */
+.btn-group {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+button {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.8rem 2.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button[type="submit"] {
+  background-color: var(--navy-dark);
+  border: 1px solid var(--navy-dark);
+  color: var(--bg-white);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--navy-blue);
+  border-color: var(--navy-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 23, 31, 0.2);
+}
+
+button[type="reset"] {
+  background-color: var(--bg-white);
+  border: 1px solid var(--navy-dark);
+  color: var(--navy-dark);
+}
+
+button[type="reset"]:hover {
+  background-color: var(--navy-dark);
+  color: var(--bg-white);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================================= */
+@media (max-width: 768px) {
+  main {
+    width: 94%;
+  }
+
+  nav {
+    gap: 1.3rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1.2rem 0.6rem;
+  }
+
+  header h1 {
+    font-size: 1.45rem;
+  }
+
+  nav {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    font-size: 0.78rem;
+  }
+
+  sec, section {
+    padding: 1.3rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
