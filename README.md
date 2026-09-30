@@ -2,7 +2,7 @@
 
 A responsive, cleanly designed academic portal dashboard built with semantic HTML5 and vanilla CSS3. Designed with a strict three-color palette, this portal provides student profile details, weekly class timetables, and a course enrollment form.
 
-🔗 **Live Demo:** [https://y4sh1133.github.io/Student-portal/](https://y4sh1133.github.io/Student-portal/)
+🔗 **Live Demo:** https://y4sh1133.github.io/Student-portal/
 
 ---
 
